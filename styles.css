@@ -37,7 +37,8 @@ body {
     filter 320ms ease 120ms;
 }
 
-.gallery:hover .card {
+.gallery:hover .card,
+.gallery:focus-within .card {
   flex-grow: 0.85;
   filter: brightness(0.28) saturate(0.68);
   transition:
@@ -45,12 +46,17 @@ body {
     filter 360ms ease;
 }
 
-.gallery .card:hover {
+.gallery .card:hover,
+.gallery .card:focus-within {
   flex-grow: 1.75;
   filter: brightness(1) saturate(1);
   transition:
     flex-grow 420ms cubic-bezier(0.22, 1, 0.36, 1),
     filter 360ms ease;
+}
+
+.card:focus {
+  outline: none;
 }
 
 .card::before {
@@ -67,7 +73,8 @@ body {
   transition: opacity 260ms ease;
 }
 
-.card:hover::before {
+.card:hover::before,
+.card:focus-within::before {
   opacity: 1;
 }
 
@@ -116,7 +123,8 @@ body {
   scrollbar-color: transparent transparent;
 }
 
-.card:hover .card-content {
+.card:hover .card-content,
+.card:focus-within .card-content {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -154,7 +162,9 @@ body {
 }
 
 .card:hover .card-content h2,
-.card:hover .card-content p {
+.card:hover .card-content p,
+.card:focus-within .card-content h2,
+.card:focus-within .card-content p {
   opacity: 1;
   transform: translateY(0);
   transition:
@@ -162,23 +172,28 @@ body {
     transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.card:hover .card-content h2 {
+.card:hover .card-content h2,
+.card:focus-within .card-content h2 {
   transition-delay: 220ms;
 }
 
-.card:hover .card-content p {
+.card:hover .card-content p,
+.card:focus-within .card-content p {
   transition-delay: 330ms;
 }
 
-.card:hover .card-content p:nth-of-type(2) {
+.card:hover .card-content p:nth-of-type(2),
+.card:focus-within .card-content p:nth-of-type(2) {
   transition-delay: 420ms;
 }
 
-.card:hover .card-content p:nth-of-type(3) {
+.card:hover .card-content p:nth-of-type(3),
+.card:focus-within .card-content p:nth-of-type(3) {
   transition-delay: 510ms;
 }
 
-.card:hover .card-content p:nth-of-type(4) {
+.card:hover .card-content p:nth-of-type(4),
+.card:focus-within .card-content p:nth-of-type(4) {
   transition-delay: 600ms;
 }
 
@@ -195,7 +210,8 @@ body {
   background: transparent;
 }
 
-.card:hover .card-content::-webkit-scrollbar-thumb {
+.card:hover .card-content::-webkit-scrollbar-thumb,
+.card:focus-within .card-content::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.28);
 }
 
@@ -261,7 +277,9 @@ body {
   }
 
   .gallery:hover .card,
-  .gallery .card:hover {
+  .gallery:focus-within .card,
+  .gallery .card:hover,
+  .gallery .card:focus-within {
     flex-grow: 0;
   }
 
